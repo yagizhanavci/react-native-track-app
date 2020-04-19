@@ -10,7 +10,7 @@ import TrackDetailScreen from "./src/screens/TrackDetailScreen";
 import TrackListScreen from "./src/screens/TrackListScreen";
 import { Provider as AuthProvider } from "./src/contexts/AuthContext";
 import { Provider as LocationProvider } from "./src/contexts/LocationContext";
-import { Provider as TrackContext } from "./src/contexts/TrackContext";
+import { Provider as TrackProvider } from "./src/contexts/TrackContext";
 import { setNavigator } from "./src/navigationRef";
 import ResolveAuthScreen from "./src/screens/ResolveAuthScreen";
 import { FontAwesome } from "@expo/vector-icons";
@@ -45,7 +45,7 @@ const App = createAppContainer(SwitchNavigator);
 
 export default () => {
   return (
-    <TrackContext>
+    <TrackProvider>
       <LocationProvider>
         <AuthProvider>
           <App
@@ -55,6 +55,6 @@ export default () => {
           />
         </AuthProvider>
       </LocationProvider>
-    </TrackContext>
+    </TrackProvider>
   );
 };
